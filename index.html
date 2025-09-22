@@ -6,19 +6,31 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body { font-family: Arial, sans-serif; margin:0; padding:0; background:#fafafa; }
-    header { 
-      color:#fff; 
-      padding:80px 20px; 
-      text-align:center; 
-      background-image: url("murales/banner.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-    header h1 {
-      font-size: 3em;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
-    }
+header { 
+  background-image: url("murales/banner.jpg");
+  background-size: cover;       /* cubre todo el header */
+  background-position: center;  /* centrado */
+  background-repeat: no-repeat;
+  
+  height: 100vh;                /* ocupa toda la altura de la pantalla */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;      /* centra verticalmente */
+  align-items: center;          /* centra horizontalmente */
+  
+  color: #fff; 
+  text-align: center;
+}
+
+header h1 {
+  font-size: 4em;
+  text-shadow: 2px 2px 12px rgba(0,0,0,0.7);
+}
+
+header p {
+  font-size: 1.5em;
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
+}
     section { padding:40px; max-width:900px; margin:auto; }
     h1, h2 { color:#333; }
     .contacto a {
@@ -34,6 +46,36 @@
     }
     .contacto a.whatsapp { background:#25D366; }
     .contacto a.instagram { background:#E4405F; }
+    .slider {
+  max-width: 900px;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.slides {
+  display: flex;
+  width: 100%;
+  animation: slide 12s infinite;
+}
+
+.slides img {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(0); }
+  25% { transform: translateX(-100%); }
+  45% { transform: translateX(-100%); }
+  50% { transform: translateX(-200%); }
+  70% { transform: translateX(-200%); }
+  75% { transform: translateX(-300%); }
+  95% { transform: translateX(-300%); }
+  100% { transform: translateX(0); }
+}
   </style>
 </head>
 <body>
@@ -57,9 +99,16 @@
     </a>
   </section>
 
-  <section>
-    <h2>Nuestros trabajos</h2>
-    <p><a href="trabajos.html">Ver galería completa</a></p>
-  </section>
+<section>
+  <h2>Nuestros trabajos</h2>
+  <div class="slider">
+    <div class="slides">
+      <img src="murales/mural1.jpg" alt="Mural 1">
+      <img src="murales/mural2.jpg" alt="Mural 2">
+      <img src="murales/mural3.jpg" alt="Mural 3">
+      <!-- agregá más imágenes acá -->
+    </div>
+  </div>
+</section>
 </body>
 </html>
